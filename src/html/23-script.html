@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>script 요소</title>
+  <link rel="stylesheet" href="/src/styles/23-script.css" />
+  <script src="/src/js/23-script.js" type="module"></script> <!-- script 내용 추후 읽어 볼 것 https://ko.javascript.info/script-async-defer -->
+  <!-- <script type="module">
+    // DOM 선택 부분
+    const flipButton = document.querySelector('.flip-button');
+    const card = document.querySelector('.card');
+
+    // 함수 구현 부분
+    const flipCard = () => {
+      card.classList.toggle('is-flipped');
+    };
+
+    // 이벤트 바인딩 부분
+    flipButton.addEventListener('click', flipCard);
+  </script> -->
+</head>
+<body>
+  <!-- DOM 객체 -->
+  <button type="button" class="flip-button">카드 뒤집기</button>
+
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-face card-face-black"></div>
+      <div class="card-face card-face-white"></div>
+    </div>
+  </div>
+  <!-- //DOM 객체 -->
+  
+  <!-- DOM 객체가 끝나고 나서 script를 줘야 한다. -->
+</body>
+</html>

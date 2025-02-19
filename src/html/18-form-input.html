@@ -8,13 +8,35 @@
   <body>
     <h1>form 관련 요소</h1>
     <h2>input 요소</h2>
+    <!-- action="https://formspree.io/ method="post"(필수) 가입하고 내 링크를 넣으면 데이터가 나에게 날라온다.-->
     <!-- 한 줄 입력서식 -->
-    <form action="/">
+    <form action="/" method="post"><!-- '/'으로 설정해 놓았기에 input submit 후 root경로로 이동한다. -->
       <fieldset>
         <legend>폼 서식</legend>
         <div>
-          <label for="userName">이름</label>
-          <input type="text" id="userName" />
+          <!-- 입력서식은 1:1로 가져야 하는 label 속성이 반듯이 있어야 한다.  -->
+          <label 
+            for="userName">
+          </label> 
+          <!-- 명시적으로 연결하는 방법. 단,id 이름을 지어야 한다. label for="userName" & input id="userName-->
+          <input 
+            type="text"
+            name="userName"
+            id="userName"
+            placeholder="예) 김현지"
+            required
+            minlength="3"
+            maxlength="8" />
+          <!-- 논리속성 required / 입력값에 대한 힌트 : placeholde -->
+          <!-- name값: 서버로 보냈을 때 값을 주고 안 주고가가 달라진다.  
+           이름 값이 정리되어 보이면서 이때 name 값이 보인다. 실습 다시 진행-->
+
+          <!-- 코드는 숨기지만 스크린 리더가 접근 가능하게 만들 수 있다. sr-only 사용 -->
+        </div>
+
+        <!-- div 사용 시 웹접근성 향상을 위해 aria-required="" 사용 입력서식은 
+        <div role="" aria-required=""> -->
+
         </div>
         <div>
           <label for="userPwd">비밀번호</label>
@@ -24,7 +46,50 @@
           <label for="likelionSearch">검색</label>
           <input type="search" id="likelionSearch" />
         </div>
+        <div>
+          <label for="userEmail">이메일</label>
+          <input type="email" name="userEmail" id="userEmail" required />
+        </div>
+        <!-- form 태그의 모든 내용을 모조리 가지고 액션이 서버쪽으로 보내는 기능 -->
+        <input type="submit" value="전송" />
+
+        <!-- search -->
+        <div>search : 
+          <label for="searchbox"></label>
+          <input type="search" name="searchbox" id="search" autofocus list="search-suggestions" />
+          <datalist>
+            <option label="가이드 내용" value="Depeche Mode"></option>
+            <option label="가이드 내용" value="Depeche Mode"></option>
+            <option label="가이드 내용" value="Depeche Mode"></option>
+            <option label="가이드 내용" value="Depeche Mode"></option>
+          </datalist>
+        </div>
+        <!-- checkbox -->
+        <div>
+          <input type="checkbox" name="" id="classHtml"/>
+          <label for="classHtml">HTML</label>
+        </div>
+        <div>
+          <input type="radio" name="classRoom" id="classRoom1" />
+          <label for="classLikelion1">회고 1팀</label>
+        </div>
+        <div>
+          <input type="radio" name="classRoom" id="classRoom2" checked/>
+          <label for="classLikelion2">회고 2팀</label>
+        </div>
+
+        <!-- 전송 버튼 -->
+        <input type="submit" value="전송" />
+        <button type="submit">전송</button>
       </fieldset>
     </form>
   </body>
 </html>
+
+<!--
+이 전에는 minlength="3" 같은 속성은 js로 validation 했다.  
+오류가 있으면 서버 전송을 하지 않는다. 
+수정 완료되면 서버로 
+-->
+
+<!-- jquery로 달력을 만들면, 키보드 접근이 불가하다. -->

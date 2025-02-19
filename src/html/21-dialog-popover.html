@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dialog 요소, popover 속성</title>
+    <style>
+      dialog.panel-dialog::backdrop {
+        background: linear-gradient(to right, #ffcccb, #ccffcc);
+      }
+    </style>
+    <script type="module">
+      // DOM 선택 부분
+      const showDialogButton = document.querySelector('.show-dialog');
+      const closeDialogButton = document.querySelector('.close-dialog');
+      const panelDialog = document.querySelector('.panel-dialog');
+
+      // 함수 구현 부분
+      const openDialog = () => panelDialog.showModal();
+      const closeDialog = () => panelDialog.close();
+
+      // 이벤트 바인딩 부분
+      showDialogButton.addEventListener('click', openDialog);
+      closeDialogButton.addEventListener('click', closeDialog);
+    </script>
+  </head>
+  <body>
+    <h1>dialog 요소</h1>
+    <div class="dialog-area">
+      <button type="button" class="show-dialog">모달창 보기</button>
+
+      <dialog class="panel-dialog" aria-labelledby="event">
+        <h2 id="event">깜짝 혜택</h2>
+        <p>모달창 내용</p>
+        <button type="button" class="close-dialog">닫기</button>
+      </dialog>
+    </div>
+
+    <h1>popover 속성</h1>
+    <button type="button" popovertarget="popoverContent" class="button-popover">
+      팝오버 보기
+    </button>
+    <div popover id="popoverContent">
+      <p>팝오버 내용</p>
+    </div>
+  </body>
+</html>
+
+
+<!-- 
+  딤드(Dimmed) 처리 https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/dialog/
+  화면에서 특정 요소(버튼, 텍스트, 이미지 등)의 밝기나 투명도를 낮춰 비활성화된 상태처럼 보이게 하는 것을 의미. 
+-->

@@ -17,11 +17,11 @@ h1 {
 /* author style 안에서 cascading이 일어난다.
 기본 : 나중에 선언된게 우선순위가 높다.  */
 p {
-  /* background-color: yellow; */
+  background-color: yellow;
 }
 
 p {
-  /* background-color: green; */
+  background-color: green;
   /* 먼저 적용 */
 }
 
@@ -34,39 +34,39 @@ p {
 
 .ai {
   /* 클래스 : 10점 우선 적용 */
-  /* background-color: orange; */
+  background-color: orange;
 }
 
 body p {
   /* 2점 : 다음 우선 적용 */
-  /* background-color: yellow; */
+  background-color: yellow;
 }
 
 p {
-  /* background-color: green; */
+  background-color: green;
 
 }
 
 -------------------------------------------- .ai {
   /* 클래스 : 10점 */
-  /* background-color: orange; */
+  background-color: orange;
 }
 
 body p {
   /* 2점 */
-  /* background-color: yellow; */
+  background-color: yellow;
 }
 
 body p[class] {
   /* 11점 : .ai를 재치고 가장 우선 순위로  */
-  /* background-color: green; */
+  background-color: green;
 }
 
 /* !important : 1000점 은 잘못 사용하면 독이 된다. event 사용하다 동적으로 스타일이 바뀔 때 사용된다. 
 함부로 사용하지 않는게 좋다. */
 
 #ai {
-  /* background-color: pink; */
+  background-color: pink;
 }
 
 /* 스타일 잡을 때 가급적이면 id를 잡지 말아라. 
@@ -74,7 +74,7 @@ body p[class] {
 
 /* 점을 찍으면 & 사용자이다. */
 .ai.copilot {
-  /* border: 10px dot blue; */
+  border: 10px dot blue;
 }
 
 /* 이런 형태를 shortend property 라고 한다. */
@@ -93,7 +93,7 @@ body는 agent style 상 margin이 8px로 지정되어 있다.
 
 이것을 외워야 할까? nope!
 
-나는 body에만 여백을 주고 싶은데, 상속이 되면 다른 곳에도 이중 추가되니까 이럴 떄는 
+나는 body에만 여백을 주고 싶은데, 상속이 되면 다른 곳에도 이중 추가되니까 이럴 때는 
 
 꾸미기와 같은 스타일은 상속되지만 배치된 위치는 상속되지 않는다. 
 
@@ -123,11 +123,11 @@ a {
 
 /* 공부를 하면서 테스트 해봐야 하는데 mdn에서 제공하는 코드 레벨 예시를 보면서 우선순위를 적용 연습을 해보아라~! */
 
-/* universal selector :  * 전체 선택자/
+/* universal selector :  * 전체 선택자 */
 * {
   margin: 0;
 }
-*/
+
 
 /* 꼭 쓴다면 강사님은 이렇게 쓴다.  */
 body * {

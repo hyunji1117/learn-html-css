@@ -1,0 +1,13 @@
+/* body 요소의 배경색상 지정 */
+body {
+  background-color: yellow;
+  /* color: rgb(0 0 255 /0.5); */
+  color: rgb(2 5 6 / 1);
+  /* 이제는 css 문법도 최신화 되어서 ',(콤마)'를 쓰지 않아도 구현이 된다. */
+  font-family: Arial, Helvetica, sans-serif;
+  /* 256컬러 빛의 삼원색 */
+  /* hsla : hue saturation lightness */
+  /* 색상환 : 0~360도
+  채도 : 0~100%
+  명도 : 0~100% */
+}

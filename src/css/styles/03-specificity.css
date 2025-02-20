@@ -1,0 +1,136 @@
+/* 우리는 개발자 스타일 - 저자 스타일 - author style */
+
+/* 글자 크기가 기본으로 지정 되어 있었다. 
+다시 font-size를 1em으로 지정하면 글자 크기가 작아 지는 것을 볼 수 있다.  */
+
+h1 {
+  font-size: 1em;
+}
+
+/* 16px 기본 값이다. 
+16*2(브라우저 밀도) = 32px으로 원래는 렌더링 되었다. 
+여기서 현재 위 코드를 적용하니 글자가 작아진다. */
+
+/* 스타일 두 개가 cacscaded 된 것이다. (즉, 겹친 것이다.)
+우선순위는 agent styel(기본 값)이 아니고 author style(개발자 - 내가 작성한 코드)가 우선순위로 지정된다.  */
+
+/* author style 안에서 cascading이 일어난다.
+기본 : 나중에 선언된게 우선순위가 높다.  */
+p {
+  /* background-color: yellow; */
+}
+
+p {
+  /* background-color: green; */
+  /* 먼저 적용 */
+}
+
+/* 우선순위 규칙 (파워가 다르다 - 노션 참조)
+선택자를 얼마나 구체적으로 썼느냐에 따라 다르다.
+
+요소 선택자 (tag)
+몇 개를 썼느냐에 따라 다르다.  
+*/
+
+.ai {
+  /* 클래스 : 10점 우선 적용 */
+  /* background-color: orange; */
+}
+
+body p {
+  /* 2점 : 다음 우선 적용 */
+  /* background-color: yellow; */
+}
+
+p {
+  /* background-color: green; */
+
+}
+
+-------------------------------------------- .ai {
+  /* 클래스 : 10점 */
+  /* background-color: orange; */
+}
+
+body p {
+  /* 2점 */
+  /* background-color: yellow; */
+}
+
+body p[class] {
+  /* 11점 : .ai를 재치고 가장 우선 순위로  */
+  /* background-color: green; */
+}
+
+/* !important : 1000점 은 잘못 사용하면 독이 된다. event 사용하다 동적으로 스타일이 바뀔 때 사용된다. 
+함부로 사용하지 않는게 좋다. */
+
+#ai {
+  /* background-color: pink; */
+}
+
+/* 스타일 잡을 때 가급적이면 id를 잡지 말아라. 
+절대 쓰지 마세요는 아니지만, 가급적이면.. */
+
+/* 점을 찍으면 & 사용자이다. */
+.ai.copilot {
+  /* border: 10px dot blue; */
+}
+
+/* 이런 형태를 shortend property 라고 한다. */
+
+/* 상속에 관하여 */
+body {
+  color: olive;
+}
+
+/* inheited from body
+부모 요소에 주어서 상속될 수도 있다. 
+모든 스타일이 상속되지는 않는다. 
+
+body는 agent style 상 margin이 8px로 지정되어 있다. 
+하지만 margin은 상속되지 않았다. 
+
+이것을 외워야 할까? nope!
+
+나는 body에만 여백을 주고 싶은데, 상속이 되면 다른 곳에도 이중 추가되니까 이럴 떄는 
+
+꾸미기와 같은 스타일은 상속되지만 배치된 위치는 상속되지 않는다. 
+
+이런 변화는 꼭!! 개발자 도구를 열어서 'inheited from'부분을 확인하자.
+*/
+
+/* a:-webkit-any-link
+vender prefix : 브라우저마다 다르게 적용되는 것을 막기 위해 사용한다. 
+
+브라우저 접두사 이다.
+
+-webkit- : 크롬, 사파리
+-moz- : 파이어폭스
+-ms- : 인터넷 익스플로러
+-o- : 오페라
+
+agent style sheet에 내장되어 있다. 
+*/
+
+/* 부모로 부터 상속받은 값으로 쓸거야 명시해주는 것이다. */
+
+a {
+  color: inherit;
+  /* body값에 따라 글자 색상이 기본값과 다르게 olive로 적용된다. */
+}
+
+
+/* 공부를 하면서 테스트 해봐야 하는데 mdn에서 제공하는 코드 레벨 예시를 보면서 우선순위를 적용 연습을 해보아라~! */
+
+/* universal selector :  * 전체 선택자/
+* {
+  margin: 0;
+}
+*/
+
+/* 꼭 쓴다면 강사님은 이렇게 쓴다.  */
+body * {
+  /* 범위를 좁힐 수록 의미가 있을 수 있다. */
+  margin: 0;
+}

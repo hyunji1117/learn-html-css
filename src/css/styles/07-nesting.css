@@ -1,0 +1,26 @@
+/* 관련 문서 https://developer.mozilla.org/ko/docs/Web/CSS/CSS_nesting/Using_CSS_nesting */
+
+/* 그 영역 안에 컴포넌트가 있다 보니까 네스팅은 유지보수의 장점이 있다. */
+
+/* BME 패턴 &__list {} sass 사용할 때 아주 찰떡이다. */
+
+.likelion {
+
+  .likelion__list {
+    list-style: none;
+
+    &:hover {
+      background-color: pink;
+    }
+
+    .likelion__item {
+      color: green;
+
+      .likelion__link {
+        color: inherit;
+      }
+    }
+  }
+}
+
+/* 선택자가 나올 때는 공백을 주어서 중첩을 구분해 주는 편이다.  */

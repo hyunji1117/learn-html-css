@@ -62,24 +62,145 @@ https://stateofjs.com/en-US/technologies/css/ - 2024년까지 Javascript 어떤 
 
 https://sass-lang.com/ - sass 공식문서
 수업 끝날 때 즘에 강사님과 시도해 본다. 
+*/
+
+/* 25.02.21(금) 
+https://nthmaster.ru/ - nth-child, nth-of-type 등을 연습할 수 있는 사이트
+https://flukeout.github.io/ - css 게임
+https://css-tricks.com/almanac/selectors/ - css 선택자 종류
+https://css-tricks.com/almanac/properties/ - css 속성 종류
+https://css-tricks.com/almanac/ - css 종합
 
 
 
+피그마, option 누르면 사이 간격을 확인할 수 있다. 
+a 태그 부모에 font-size: 0; 상속 처리로 inline 공백 제거 😱
+
+14:00 - 15:00
+https://atomicdesign.bradfrost.com/chapter-2/
+아토믹 디자인 방법론 많이 회자되고 있다. 
+UI를 개발할 때 
+
+피그마 시안을 열어보면 여러 시안이 있을 것이다. 
+초창기는 무료인데, 데브 모드는 몇 개만 정해져 있다. 
+야뭇쌤 디자인 이다. 
+
+아톰이 원자 > 분자 > 조직체 > 템플릿 > 페이지 순으로 나누어진다. 
+이는 컴퍼런트 관련 UI과 굉장히 유사하다. 
+
+아원자 입자 : 
+컬러는 
+
+원자 : 
+대표적으로 버튼 컴포넌트를 들 수 있다. 
+하나를 만들어 놓는다. 이는 원자 컴포넌트가 된다. 
+
+리엑트 상태, 나중에 배울 것. useState, useEffect, 컴포넌트를 만들어서 사용한다.
+이 때 컴포넌트를 만들어서 사용한다.
+
+분자 : 
+작은 단위의 원자가 모인 것이다.
+
+** 재활용할 수 있는 범위를 어디까지 볼 수 있느냐가 포인트 이다. 
+
+** 원자, 분자, 조직체 레벨의 컴포넌트를 역할에 맞게 잘 활용하는 것이 중요하다.
+웹퍼블의 한계는 페이지 베이로 만들어서, 재사용성이 떨어진다.
+
+간단한 예제여도 용도에 맞게 컴포넌트를 쪼개서 필요할 때 갖다 쓰는 연습을 해야 한다.
+
+레고처럼 어떻게 조립할 것인지 
+페이지 베이스일 경우 가상요소는 괜찮은데 나중에 리엑트가면 사용하지 않기 때문에 한계를 느끼는 것이다. 
+
+html/css는 설계가 중요하다. 
+바라보는 관점이 바뀔 것이다. 
+컴포넌트 구분하는 것. 
+
+분자로 만든 것 (총 5개) > 조직체로 간다. 
+my thought: 하나를 제대로 만들면 뒤에 가서 편해진다. 
+왜 여기에도 넣을 수 있는데 저기에 넣어요? 
+각자 역할에 맞게 넣기 때문이다. 
 
 
 
 */
 
 
-/* 예습 체크 리스트
-- 공부 방향 가이드 - 노션 mdn 내용 - https://wholesale-snipe-50a.notion.site/CSS-Selector-114c3e449f1d80d2a044cdc03717abfc)
 
+/*
+예습 체크 리스트
+- 공부 방향 가이드 - 노션 mdn 내용 - https://wholesale-snipe-50a.notion.site/CSS-Selector-114c3e449f1d80d2a044cdc03717abfc)
+- 초록 책 1장 읽기
+
+
+*/
+
+/* 과제 :  
 
 
 */
 
 /* 복습 체크 리스트 
-css 게임 해볼 것. nth 등 개념을 눈에 익힐 것
-https://flukeout.github.io/
+1. 01-member-service.css 파일을 참고하여 CSS 선택자를 이해하고 컴포넌트 별로 역할을 다시 뜯어 본다. 
+2. 간단한 박스를 만들면서 변화하는 모습을 이해해야 한다. (주말 숙제) 
 
+- css 게임 해볼 것. nth 등 개념을 눈에 익힐 것
+https://flukeout.github.io/
 */
+
+/* ----------------------- @import "src/ui/sty 피그마 파일 불러오기"; */
+
+/* a 요소 이면서 가상요소 선택자 */
+.item::before {
+  content: ":";
+  padding: 0 8px;
+  margin: 0 16px;
+}
+
+/* a 요소보다 우선순위가 높은 것 */
+.first::before {
+  content: "";
+}
+
+/* 뭐를 만들어 보면서 배운 내용을 접목해 보자 
+피그마 시안을 보고 회고팀에서 배운 내용을 정리 해보자고 UI를 줄 것이다.
+자율적으로 
+
+설계와 디자인을 반복해야 한다. 계란이 먼저인지 닭이 먼저인지*/
+
+/* 두 번째부터 나머지 모두 선택이 된다. */
+/* 구조 선택자를 이용할 때 공부하기 좋은 예제 (not 실제 사용) */
+a:nth-child(n+2) {}
+
+.member_link {
+  display: flex;
+  /* font-size: 0; */
+  /* li는 블록레벨이어서 inline으로 바꿔주는 것이다.*/
+}
+
+a {
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+
+}
+
+li {
+  display: inline-block;
+}
+
+
+span {
+  /* padding: 0 16px; */
+}

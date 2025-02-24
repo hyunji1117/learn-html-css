@@ -1,0 +1,51 @@
+body {
+  background-color: hsl(180, 50%, 80%);
+  background-image: url(/src/assets/images/rabbit.png);
+  background-repeat: no-repeat;
+  /* 성능적인 측면에서도 효과가 있다. 한번에 여러장을 출력하기 때문*/
+  background-position: 50% 0;
+  /* 본인의 컨테이너 박스 기준으로 움직인다. */
+  /* background-position: 50%;
+  즉, 상자의 50%와 이미지의 50%가 일치하도록 만들어 주는 것이다. */
+  min-height: 100vh;
+  /* body 높이의 최소값을 지정하는 속성 */
+  /* vh: viewport height */
+  /* 100vh: 화면의 높이를 100%로 채운다. */
+  background-attachment: fixed;
+  /* 배경 고정하는 속성 */
+  /* attachmen를 활용한 parallax Scrolling */
+  background-size: cover;
+  /* 가로사이즈를 최대한 자르지 않는 선에서 채우는 방식 */
+  background-size: contain;
+  /* 가로세로 모두 유지하여 채우는 방식 */
+  background-size: 50px;
+  /* 픽셀 단위는 절대 위치(왼쪽 상단 기준)로 배경을 배치 */
+  background-size: cover;
+  /* 여기서 가운데 지정 하면 모바일 환경에서 뷰포트를 늘리면 안 보이던 이미지가 점점 보이는 효과를 볼 수 있다. */
+  background:
+    url(/src/assets/images/cloud.png) no-repeat 100px 50px fixed,
+    url(/src/assets/images/sun.png) no-repeat 150px 50px / 150px 150px,
+    linear-gradient(10deg, rgb(255, 255, 255), rgb(164, 80, 80)),
+    /* gradient는 맨 앞에 배치하면 마크업 순서대로 지정되어서 뒤에 이미지가 가려진다. */
+    darkkhaki;
+  /* 0 100px: 배경의 포지션 */
+  /* 즉, 한줄로 짧게 줄일 수 있다.= 단축 표기법 Shorthand */
+  /* 먼저 선언한 순서대로 쌓이는 구조이다. */
+  /* 포지션, 배경 이미지 크기 */
+}
+
+/* hsl(hue, saturation, lightness) */
+/*  배경 색상은 hsl로 지정해도 된다.
+(괄호)가 있으면 함수이다. 
+
+수업시간에는 절대경로로 사용하고
+깃허브 페이지에 배포할 때는 상대경로로 사용해야 한다.
+
+shorthand property (짧게 쓰는 속성)
+예: margin: 20px 20px; (상하, 좌우)
+
+** 다른 얘기
+button: box-sizing: border-box; (블록)
+a : contnet-box (인라인) 임으로 같은 것을 만들어도 결과다 더 크게 나오는 특성을 고려 해야 한다.
+디자인을 까다롭게 만드는 요인이 되기도 한다. (예외사항) 
+*/

@@ -1,0 +1,106 @@
+/* 기본 값에 대한 세부 정의를 할 수 있다. */
+@property --primary-color {
+  syntax: '<color>';
+  inherits: false;
+  /* 상속받지 않게 규칙을 정하면 부모가 어떤 지역 변수를 할당해도 상속 받지 않는다. */
+  initial-value: #3498db;
+}
+
+/* 상속을 안 받아야 하는 개발 케이스: 
+1. 테마가 바뀌는 경우
+2. 특정 컴포넌트에만 적용하는 경우
+*/
+
+/* 전역 변수 정의 */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  /* 이렇게 작성 해야 하는데 */
+  /* --secondary: #2ecc71;(콜백) */
+  /* 플랜B 대안이다. 1️⃣ */
+
+  --white: #fff;
+  --black: #000;
+  --red: #f00;
+  --orange: orange;
+  --green: #0f0;
+  --blue: #00f;
+
+  --text12: .75rem;
+}
+
+/* 왜 단어 사이에 '-(하이픈)'이 있나요?
+케밥 케이스(kebab-case)를 써서 그렇다. 
+*/
+
+.container {
+  --text-color: var(--orange);
+  color: var(--orange);
+  /* 부모(div)=오랜지 (상속이다.)
+      ㄴ자식(p)=오랜지
+        ㄴ손주(span)=오랜지 */
+
+  .parent {
+    /* color: var(--red); */
+
+    .child {
+      /* color: var(--text-color); */
+    }
+  }
+}
+
+.text-card-1 {
+  /* 지역 변수 정의 */
+  --secondary-color: #ebb55e;
+
+  /* 변수 안에 변수를 재할당 */
+  --bg-color: var(--green);
+  --border-color: var(--red);
+
+  /* background-color: --secondary-color; 이렇게 하면 안됨 */
+  /* background-color: var(--secondary-color);  */
+  /* 이렇게 해야함 */
+
+  /* 1️⃣ 콜백 */
+  /* --secondaary-color 속성이 없을 때 대안으로 #2ecc71가 적용되도록 설정 */
+  h1 {
+    /* background-color: var(--secondary-color #2ecc71); */
+    background-color: var(--bg-color);
+  }
+
+  p {
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--border-color);
+  }
+}
+
+/* 전역보다 지역 변수가 우선이다.
+기본적으로 가까운 변수를 갖다 쓰는 특성이 있다. */
+
+/* sass는 그 시점에 있는 것으로 적용한다. */
+
+.text-card-2 {
+  --bg-color: var(--blue);
+  --border-color: var(--green);
+
+  h1 {
+    background-color: var(--bg-color);
+  }
+
+  p {
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--border-color);
+  }
+}
+
+/* 상태관리를 하면 굉장히 편하다. 노가다를 많이 해보면 된다. 
+개발자는 제일 개으른 사람이어서 함수는 */
+
+/* 전역은 위험한다. css는 개발 친화적이지 않다고 생각할 수 있다. capsulization이 안되기 때문이다. 
+
+컴포넌트 별로 색상의 주제를 정해놓고 사용하는 것도 좋다. 
+
+같은 라인을 멀티커서 vscode 단축키  를 모두 선택하고 맨 뒤로 이동하면 한번에 수정이 가능하다.
+*/

@@ -13,39 +13,109 @@
 
 /* 전역 변수 정의 */
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #2ecc71;
-  /* 이렇게 작성 해야 하는데 */
-  /* --secondary: #2ecc71;(콜백) */
-  /* 플랜B 대안이다. 1️⃣ */
-
+  /* 색상 팔레트 */
   --white: #fff;
   --black: #000;
   --red: #f00;
-  --orange: orange;
   --green: #0f0;
   --blue: #00f;
+  --orange: orange;
+  --yellow: yellow;
+  --light-blue: aqua;
 
-  --text12: .75rem;
+  /* 주요 색상 */
+  --primary-color: var(--blue);
+  --secondary-color: var(--light-blue);
+  --accent-color: var(--yellow);
+  --border-color: var(--red);
+
+  /* --primary-color: #3498db;
+  --secondary-color: #2ecc71; */
+  /* 이렇게 작성 해야 하는데 */
+  /* --secondary: #2ecc71;(콜백) */
+  /* 콜백은 플랜B 대안이다. 아래1️⃣내용 참조 */
+
+  /* size */
+  --small: .75rem;
+  --medium: .875rem;
+  --default: 1rem;
+  --large: 1.125rem;
+
+  --text12: 0.75rem;
 }
 
 /* 왜 단어 사이에 '-(하이픈)'이 있나요?
 케밥 케이스(kebab-case)를 써서 그렇다. 
 */
 
+.lion {
+  color: red;
+  border: 1px solid green;
+
+
+  .parent {
+    padding: inherit;
+    margin: 0;
+
+    .child {
+      color: black;
+      border: 1px solid blue;
+      border-color: blue;
+      padding: inherit;
+      display: inline-block;
+    }
+  }
+
+}
+
 .container {
+  color: var(--text-color);
+
+  /* 예시
   --text-color: var(--orange);
-  color: var(--orange);
+  color: var(--orange); */
+
   /* 부모(div)=오랜지 (상속이다.)
       ㄴ자식(p)=오랜지
         ㄴ손주(span)=오랜지 */
+  /* 해당 구조로 색상을 부모에게 주면 자연스럽게 자식들에게 색상이 상속된다. 
+  (디자인적 요소만 상속 됨) */
 
   .parent {
-    /* color: var(--red); */
+    --text-color: blue;
+
+    /* 예시 이어서
+    color: var(--red);
+    다만 이렇게 중간에 다른 색으로 지정한다면 .child는 red로 색상이 변경되나 맨 상단 세부 정의(@property --primary-color)로 색상은 상속하지 않는다고 정의하면 이때 .child는 .container(조상부모)를 따라가고 .parent만 색상이 red로 된다. (헷갈리면 수업 예제로 실습 해볼 것)  */
 
     .child {
-      /* color: var(--text-color); */
+      color: var(--text-color);
     }
+  }
+}
+
+.wrapper {
+  --font-size: var(--small);
+  --bg-color: var(--green);
+  --text-color: var(--red);
+
+  button {
+    font-size: var(--font-size, 1rem);
+    background-color: var(--bg-color, #fff);
+    color: var(--primary-color, #000);
+  }
+
+  button.close {
+    --font-size: var(--default);
+  }
+
+  button.popup {
+    --text-color: var(--blue);
+
+  }
+
+  button.info {
+    --bg-color: var(--white);
   }
 }
 

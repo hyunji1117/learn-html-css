@@ -1,0 +1,137 @@
+/* 스타일 초기화 */
+/* body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+body {
+  font-family: "SUIT", sans-serif;
+} */
+
+/* 멤버 서비스 */
+/* .member-service {
+  background: yellow;
+  display: flow-root;
+
+  a {
+    float: left;
+    text-transform: uppercase;
+  }
+
+  a:nth-child(n+2)::before {
+    content: "|";
+    margin: 0 0.5em;
+  }
+} */
+
+/* 멤버 링크 */
+/* .member-link {
+  border: 1px solid red;
+  display: flow-root;
+
+  li {
+    background: skyblue;
+    float: left;
+
+    span {
+      background: pink;
+      float: left;
+      margin: 0 0.5em;
+    }
+
+    a {
+      background: orange;
+      float: left;
+      text-transform: uppercase;
+    }
+  }
+} */
+
+:root {
+  /* 색상 팔레트 */
+  --pink: #e2bebe;
+
+  /* 주요 색상 */
+  --navigation-text: var(--pink);
+
+  /* size */
+  --space: .625rem;
+}
+
+/* common */
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+}
+
+body {
+  border: .0625rem solid red;
+  display: flow-root;
+}
+
+a {
+  text-decoration: none;
+  color: var(--navigation-text);
+  text-transform: uppercase;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/* member-service */
+.member-service {
+  background-color: #38eded;
+  display: flow-root;
+
+  .item {
+    background-color: #462c2c;
+    float: left;
+    /* margin: var(--space); */
+    margin: 10px;
+
+    &:nth-child(n+2)::before {
+      content: "|";
+
+    }
+  }
+}
+
+
+/* member-link */
+.member-link {
+  background-color: orange;
+  /* float: left; */
+
+  li {
+    float: left;
+
+
+    span {
+      float: left;
+      margin: 0 10px;
+    }
+
+    a {
+      background-color: rgb(72, 34, 34);
+      float: left;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+/*
+```
+<figure class="avatar">
+    <img src="/src/assets/face/face1.jpg" alt="사용자명" />
+    <figcaption>
+      오프라인
+    </figcaption>
+  </figure>
+```
+figcaption이 화면에 보이지 않도록 해야 하지 않을까? 
+<span class="sr-only"> 태그를 하나 더 감싸서 보이지 않게 처리한다. 
+대신 꾸미기는 figcaption으로 주면 된다. 
+
+마크업이 어려우면 css가 복잡해지고 javascript가 복잡해진다.
+anchor 와 button의 차이 : 
+box-sizing : 
+anchor : content
+display 모드도 다르다.🤨
+button : border-box
+padding-box 가 default이다.
+
+aria label는 interaction이 가능한 요소에만 사용한다.
+*/
+
+@import "/src/common/modern-reset.css";
+@import "/src/common/a11y.css";
+
+/* 아바타 컴포넌트 */
+/* 인터렉션이 없는 컴포넌트 */
+.img-avatar {
+  --size: 4rem;
+  /* 어느순간 사이즈를 쉽게 조정할 수 있다. */
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-border: #fff;
+  --state-active: #4cfe88;
+
+  width: var(--size);
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* 어제 배운 내용을 활용 해보기, 재료를 알려주는 것이다. */
+    /* 정사각형 비율이 유지될거라는 전제하에 */
+    border-radius: var(--radius);
+    /* 부모의 사이즈를 100%으로 사용한다는 것. inherit를 사용하는 것과 차이는 100%는 반응형으로 적용된다. */
+  }
+
+  .state {
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--state-border);
+    background: var(--state);
+
+    &.is-active {
+      background: var(--state-active);
+    }
+  }
+}
+
+/* 인터렉션이 있는 버튼 컴포넌트 */
+.button-avatar {
+  --size: 4rem;
+  /* 어느순간 사이즈를 쉽게 조정할 수 있다. */
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-border: #fff;
+  --state-active: #4cfe88;
+
+  position: relative;
+  width: var(--size);
+  background: transparent;
+  /* 이 스타일을 누구에게 주었던 것일까? 잘 보고 결정 해야 한다. */
+  /* 🤨none과 transparent(너 투명이야)의 차이는?  */
+  border: 0 none;
+  /* 굵기와 스타일을 모두 주지 않는 것. */
+  padding: 0;
+  /* figure에 담아진 이미지와 동일하게 보일 것이다. */
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  /* 어제 배운 내용을 활용 해보기, 재료를 알려주는 것이다. */
+  /* 정사각형 비율이 유지될거라는 전제하에 */
+  border-radius: 50%;
+}
+
+&::after {
+  content: "";
+  position: absolute;
+  /* BFC */
+  width: 25%;
+  aspect-ratio: 1/1;
+  border-radius: var(--radius);
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--state-border);
+  background: var(--state);
+}
+
+&.is-active::after {
+  background: var(--state-active);
+}
+
+/* button을 쓰면 공백이 생긴다. agent 스타일 상 border, padding이 있다. 커서가 기본적으로 포인터 이다. 
+button 관련 에이전트 살펴 보자.
+에릭 마이어가 만든 reset.css를 현업에 써서 잘 모를 수 있었다. 
+*/
+
+/*
+.sr-only {
+  position: absolute; 화면에 띄운다
+  width: 1px; 만약 0을 주면 가상 커서가 머무를 최소한 자리가 없어진다.
+  height: 1px;
+  padding: 0;
+  margin: -1px; 점 조차 보이지 않게 해야 한다.
+  overflow: hidden; 
+  clip: rect(0, 0, 0, 0); position: absolute랑 같이 사용해야 한다. 사각형으로 잘라내는 것이다. 
+  앞으로는 clip-path를 많이 사용할 것이다. inset(50%)는 상,우,하,좌 지점에서 중심으로 50%만큼 잘라내라는 뜻이다. 
+  https://bennettfeely.com/clippy/ (⭐️참고자료)
+  white-space: nowrap; 공백문자/줄바꿈 처리 - wrap: 줄바꿈, 즉 줄바꿈 금지
+  border-width: 0; option: 혹시 모르니 
+}
+*/

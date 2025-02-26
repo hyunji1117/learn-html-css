@@ -92,10 +92,16 @@ line-height의 normal
 
 /* 25.02.25(화) */
 /* 9:00 ~ 9:50 
+🤨 2차 과제 피드백 다른 동기들 것까지 모두 정리하기
+https://www.notion.so/19f73873401a808a93e8e36d618db199
+
+🤨 강사님이 노션에 작성한 AI요약 확인해볼 것. 
+https://wholesale-snipe-50a.notion.site/AI-1a0c3e449f1d803f9952db7dffa879c8
+
 🤨 notification = 토스트(Toast)아래서 위로, 스낵바(Snack bar)위에서 아래로 (알림창)
 https://aoa.gitbook.io/skymimo/aoa-2023/ui-aria-2022-2024/snack-bar
 
-✅ src/ui/styles/03-toast.css 코드 풀 해서 화인 해보기.
+✅ src/ui/styles/03-toast.css 코드 풀 해서 화인 해보기.🤨
 
 https://caniuse.com/
 custom properties를 값으로 사용 가능한지 답을 해준다. 
@@ -119,7 +125,33 @@ command(ctrl) + D 여러번 누르다
 command(ctrl) + k 하면 일부분만 넘어갈 수 있다. 
 
 
+display: none;은 DOM tree에서도 사라지는 속성이다. 
 
+nesting이 현업에서 사용하면 안된다. (수업시간에는 자유롭게 쓰지만..)
+
+🤨 img에게 주는 것이다. 
+aspect-ratio : 1/1 (가로/세로) 비율이 똑같다. 
+알아서 높이가 78이 된다. 
+can i use 찾아보기
+
+🤨 이미지 자동 비율 맞추기 mdn
+https://developer.mozilla.org/ko/docs/Web/CSS/object-fit
+object-fit : cover;
+object-position: 0 -20px;
+
+*/
+
+/* 25.02.26(수) 
+
+국제와 in18 약자 intelldence의 약자
+노출하는 전략 attr()🤨
+
+line-height
+🤨 https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align
+🤨 https://css-tricks.com/how-to-tame-line-height-in-css/
+
+
+*/
 
 
 /* "기록보다 마킹" 전략
@@ -137,10 +169,8 @@ command(ctrl) + k 하면 일부분만 넘어갈 수 있다.
 */
 
 /* 오늘 저녁 예습 
-float - 내일 1교시 예정
-position sticky, fixed
 반응형
-- 쿼리
+- 미디어 쿼리
 - layout
 
 과제 정답지는 없고 수업 시간에 같이 만들어 볼 것이다.
@@ -194,8 +224,11 @@ root: {
 */
 
 
-/* 4주차 피드백 */
-
+/* 4주차 피드백
+남주성 참여 저조. 대답이 없어서 끌고 가기 힘이 빠진다. 
+맴버 서비스 링크 예제를 통해 개념과 실습으로 속성을 확실히 이해가 더 잘 되는 시간이어서 좋았어요!
+앞으로 이런 시간을 많이 가졌으면 좋겠다!
+*/
 
 
 /* "기록보다 마킹" 전략

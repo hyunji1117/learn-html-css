@@ -1,0 +1,99 @@
+/* 미디어 쿼리의 한계점을 해결 해주는 컨테이너 쿼리 (다음주 중으로 진행하는 내용) */
+
+/* 다양한 디바이스 화면, 이런 매체에 선택적으로 적용할 수 있는  */
+
+/* 
+<style type="text/css" 🤨media="screen"> - 화면에 보여지는 스타일
+
+--- 미디어 타입이 screen일 때 적용되는 CSS ---
+h1 {
+  color: #f00;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+</style><style type="text/css" 🤨media="print">
+
+--- 미디어 타입이 print 때 적용되는 CSS ---
+h1,
+p {
+  color: #000;
+  font-size: 1em;
+}
+
+</style>
+
+장점: 쓸데 없는 장식적인 요소가 없이 프린트할 때 원하는 스타일로 잉크가 덜 든다.
+만약에 프린트 스타일을 위해 적용하면 문제가 생길 수 있어. 
+
+모바일
+테블릿
+데스트탑 따로 링크로 관리할 수 있다. 
+*/
+
+@import "/src/common/best-reset.css";
+@import "/src/common/a11y.css";
+
+/* css는 직렬로 각각 요청하기에 서버 요청 횟수가 늘어나서 하나의 css 안에 몰아 넣어야 한다. 
+지금은 코드가 복잡해져서 수업할 때는 분리해서 작성하고 있다. 로딩 후 실행 요청도 다르다.  
+
+@use 🤨
+
+실제 서비스할 떄는 css 파일을 minify한다. 
+개발 환경 중에 빌드하는 과정 (컴파일 과정)에서 css가 병합되는 것을 알 수 있다. 
+
+오전에 안 보여준 것.
+이미지 최적화, 성능 최적화에 대해 마크업 단계 뿐 아니라, 포맷 자체를 바꾸는 것. 
+차세대 이미지 포맷을 사용하면 도움이 된다. 
+webp 컨버팅 온라인 서비스로 돌려서 만들면 된다. 🤨
+
+css를 병합하는 과정을 도구의 힘을 빌리면 된다. 
+https://www.npmjs.com/package/simple-webp-converter combin media query 도구🤨
+package.json에 추가하기 🤨
+
+
+html <meta>
+initial-scale=1.0, maximum-scale=1.0, user-scalable=no
+https://www.mydevice.io/
+
+content="width=device-width, initial-scale=1.0"
+실제 화면 크기가 이거야 라고 알려주는 기능.
+*/
+
+/* 기본적으로 적용될 배경색 - blue */
+body {
+  background: yellow;
+  font-size: clamp(.75rem, 2vw, 2rem);
+
+  /* at rule */
+  /* 뷰포트(600px) 크기에 따라 적용될 배경색 - pink */
+  @media (min-width: 600px) and (max-width: 800px) {
+    /* 최소 600픽셀 이상이면 pink로 변경 요청 */
+    background: pink;
+  }
+
+  /* 배포 안하고 로컨호스트를 공개할 수 있다. 
+엑세스 허용 */
+
+  /* 가로 보기모드에서 적용될 배경색 - orange */
+  @media (min-width: 1000px) {
+    background: lime;
+  }
+}
+
+/* 오늘의 핵심, 유연하게 만들어놔라 %, em, rem*/
+
+/* 브라우저가 자정한 최소크기를 쓰면 문제가 있을 때, 검색, 가능한 속성이 있어? Ai에게 문러본다. 
+
+반응형 clapm 함수 = css 함수이다. 
+https://developer.mozilla.org/en-US/docs/Web/CSS/clamp (clapm mdn)
+
+디자이너가 준 폰트값 사이 유연하게 만드는 것은 개발자 몫이다.
+🤨 뷰포트 메타태그 없이 어떻게 나오는지 꼭 테스트 해보아라.
+🤨 어댑티브 웹디자인에 대해 나중에 찾아보아라. (AI) 필요한 리소스만 요청한다. 성능 측면에서는 유리하다. 유지보수는 각각 해야 한다. 반응형 UI가 복잡한다? 복잡한 UI를 다  반응형 스타일로 만들기 쉽지 않다. 
+
+
+
+*/

@@ -1,0 +1,69 @@
+@import "/src/common/modern-reset.css";
+
+body {
+  font-family: SUIT, sans-serif;
+}
+
+.card {
+  /* BFC - overflow:hidden, display:flow-root, float:left, position: absolute */
+  /* background: pink; */
+  margin: 2em;
+  /* 16 *2 = 32px */
+  /* 여백줄 때 rem 단위를 많이 쓴다. */
+  padding: 2em;
+  /* 16 * 2 = 32px */
+  border: 1px solid #aaa;
+  border-radius: 0.5rem;
+  /* root값 16px * 0.5rem = 8px */
+  /* em을 쓰면 root에 font-size를 지정하여 margin, padding이 같이 반영되게끔 한다. 
+  이번 작업에서는 제외한다. */
+
+  &.good-partner {
+    display: flow-root;
+  }
+
+  /* 제목 */
+  .subject {
+    /* background: skyblue; */
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 0.9;
+
+    span {
+      vertical-align: top;
+
+      &[lang="en"] {
+        font-size: 0.5em;
+        /* background: yellow; */
+        /* position: relative;
+        top: 2px; */
+      }
+    }
+  }
+
+  /* 이미지 */
+  .thumbnail {
+    --radius: 50%;
+
+    border: 1px solid #ccc;
+    float: left;
+    margin: 1em;
+    padding: 0.625em;
+    border-radius: var(--radius);
+    width: 120px;
+    shape-outside: circle(50%);
+
+    img {
+      border-radius: var(--radius);
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: 0 -20px;
+    }
+  }
+
+  /* 내용 */
+  .content {
+    margin-top: 0.625rem;
+  }
+}

@@ -1,0 +1,60 @@
+@import "/src/common/theme.css";
+@import "/src/common/best-reset.css";
+
+body {
+  display: flow-root;
+}
+
+/* 헤더 */
+.header {
+  background: var(--pastel-coral);
+  height: 10vh;
+
+}
+
+/* 네비게이션 */
+.navigation {
+  background: var(--pastel-blue);
+  height: 15vh;
+  /* @media (min-width: 768px) {
+    height: 80vh;
+  } */
+}
+
+/* 메인 컨테이너 */
+.main-container {
+  display: flow-root;
+}
+
+/* 메인 */
+.content {
+  background: var(--pastel-mint);
+  height: 40vh;
+
+  @media (min-width: 768px) {
+    height: 65vh;
+    width: 50%;
+    float: left;
+  }
+}
+
+/* 사이드바 */
+.sidebar {
+  background: var(--pastel-yellow);
+  height: 25vh;
+
+  @media (min-width: 768px) {
+    height: 65vh;
+    width: 50%;
+    float: left;
+  }
+}
+
+/* 푸터 */
+.footer {
+  background: var(--pastel-lavender);
+  height: 10vh;
+  /* @media (min-width: 768px) {
+    height: 10vh;
+  } */
+}

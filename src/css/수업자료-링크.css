@@ -170,8 +170,10 @@ line-height
 
 /* 오늘 저녁 예습 
 반응형
-- 미디어 쿼리
-- layout
+- 컨테이너 쿼리
+- flex
+- form styling (까다롭고 어렵다)
+- 과제는 내일 나온다. (목)
 
 과제 정답지는 없고 수업 시간에 같이 만들어 볼 것이다.
 
@@ -195,35 +197,44 @@ https://aoa.gitbook.io/skymimo/aoa-2023/ui-aria-2022-2024/snack-bar
 - 상대, 절대 경로 확인 https://discord.com/channels/1318397504664113232/1340934866421682206/1343385992974962698
 - reset import 하고 개발자 도구에서 Network 200-300번대로 확인할 것.
 - 브라우저 호환성을 꼭 확인 해봐라. 
+- border: 1px solid currentColor;
+  color: green;
+  버튼 만들 때 버튼의 테두리까지 동일하게 만들기
+- overflow: auto;
+  약관처럼 블록 박스 안에 스크롤을 만든다.
+- padding-inline: 20px;
+  inline 속성을 사용하여 좌우 여백을 동시에 준다.
+  padding-block: 10px;
+  block 속성을 사용하여 상하 여백을 동시에 준다.
+  margin-inline: 30px;
+  margin-block: 50px;
+  inline은 좌우로 흘러간다.
+  block은 위아래로 흘러간다.
+- 🤨 mdn 참고자료 - writing-mode(글씨 방향)
+  https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
+- 
 
-css 변수 활용하기 
-1. 전역 변수 정의
-root: {
+
+
+
+css 변수 활용하기 1. 전역 변수 정의 root: {
   --primary-color: red;
 }
 
-2. 모든 값들은 변수를 활용해주세요. (최대한 많이 사용하는게 좋다.컴포넌트 관리 차원에서 진행)
-.wrapper {
+2. 모든 값들은 변수를 활용해주세요. (최대한 많이 사용하는게 좋다.컴포넌트 관리 차원에서 진행) .wrapper {
 
   button {
-  font-size: var(--font-size, 1rem(대안 콜백 준비);
-  background-color: var(--bg-color,  #fff);
-  color:var(--text-color, #777);
+    font-size: var(--font-size, 1rem(대안 콜백 준비);
+        background-color: var(--bg-color, #fff);
+        color:var(--text-color, #777);
+    }
+
+    button.close {
+      --font-sise: var(--default);
+    }
   }
-  button.close {
-    --font-sise: var(--default);
-  }
-}
 
-14:00 ~ 14:50
-이 속성이 상속되는 요소일까? 역으로 개발자 도구 찾아보는 것으로 생각을 확장 시켜라.
-
-
-
-
-*/
-
-
+  14:00 ~ 14:50 이 속성이 상속되는 요소일까? 역으로 개발자 도구 찾아보는 것으로 생각을 확장 시켜라. */
 /* 4주차 피드백
 남주성 참여 저조. 대답이 없어서 끌고 가기 힘이 빠진다. 
 맴버 서비스 링크 예제를 통해 개념과 실습으로 속성을 확실히 이해가 더 잘 되는 시간이어서 좋았어요!

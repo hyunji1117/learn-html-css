@@ -1,0 +1,32 @@
+@import "/src/common/theme.css";
+
+body {
+  font-family: SUIT, sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.header {
+  background: var(--pastel-blue);
+  height: 10vh;
+}
+
+.navigation {
+  background: var(--pastel-green);
+  height: 15vh;
+}
+
+.content {
+  /* display: flex; */
+  background: var(--pastel-yellow);
+  height: 55vh;
+}
+
+.sidebar {
+  background: var(--pastel-coral);
+  height: 15vh;
+}
+
+.footer {
+  background: var(--pastel-violet);
+}

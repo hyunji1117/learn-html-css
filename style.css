@@ -1,0 +1,21 @@
+@import "/src/common/modern-reset.css";
+
+:root {
+  --rose-pink: #f05879;
+  --light-coral: #f17791;
+  --soft-orange: #fb9451;
+  --pastel-yellow: #ffe54c;
+  --periwinkle-blue: #93acff;
+}
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  width: 33.3333%;
+  /* background: ; */
+}

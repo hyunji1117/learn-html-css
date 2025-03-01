@@ -22,14 +22,17 @@ padding-box 가 default이다.
 aria label는 interaction이 가능한 요소에만 사용한다.
 */
 
-@import "/src/common/modern-reset.css";
-@import "/src/common/a11y.css";
 
-/* 아바타 컴포넌트 */
-/* 인터렉션이 없는 컴포넌트 */
+
+
+/* @import "/src/common/modern-reset.css";
+@import "/src/common/a11y.css"; */
+
+/* 아바타 컴포넌트
+인터렉션이 없는 컴포넌트
 .img-avatar {
   --size: 4rem;
-  /* 어느순간 사이즈를 쉽게 조정할 수 있다. */
+  어느순간 사이즈를 쉽게 조정할 수 있다.
   --radius: 50%;
   --state: #dbdbdb;
   --state-border: #fff;
@@ -41,72 +44,27 @@ aria label는 interaction이 가능한 요소에만 사용한다.
   img {
     width: 100%;
     aspect-ratio: 1/1;
-    /* 어제 배운 내용을 활용 해보기, 재료를 알려주는 것이다. */
-    /* 정사각형 비율이 유지될거라는 전제하에 */
-    border-radius: var(--radius);
-    /* 부모의 사이즈를 100%으로 사용한다는 것. inherit를 사용하는 것과 차이는 100%는 반응형으로 적용된다. */
-  }
-
-  .state {
-    width: 25%;
-    aspect-ratio: 1/1;
-    border-radius: var(--radius);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border: 2px solid var(--state-border);
-    background: var(--state);
-
-    &.is-active {
-      background: var(--state-active);
-    }
+    어제 배운 내용을 활용 해보기,
+    재료를 알려주는 것이다. 정사각형 비율이 유지될거라는 전제하에 border-radius: var(--radius);
+    부모의 사이즈를 100%으로 사용한다는 것. inherit를 사용하는 것과 차이는 100%는 반응형으로 적용된다.
   }
 }
+*/
 
-/* 인터렉션이 있는 버튼 컴포넌트 */
+/* 인터렉션이 있는 버튼 컴포넌트
 .button-avatar {
-  --size: 4rem;
-  /* 어느순간 사이즈를 쉽게 조정할 수 있다. */
-  --radius: 50%;
-  --state: #dbdbdb;
-  --state-border: #fff;
-  --state-active: #4cfe88;
 
-  position: relative;
+  /* position: relative;
   width: var(--size);
   background: transparent;
-  /* 이 스타일을 누구에게 주었던 것일까? 잘 보고 결정 해야 한다. */
-  /* 🤨none과 transparent(너 투명이야)의 차이는?  */
+  이 스타일을 누구에게 주었던 것일까? 잘 보고 결정 해야 한다.
+  🤨none과 transparent(너 투명이야)의 차이는?
   border: 0 none;
-  /* 굵기와 스타일을 모두 주지 않는 것. */
+  굵기와 스타일을 모두 주지 않는 것.
   padding: 0;
-  /* figure에 담아진 이미지와 동일하게 보일 것이다. */
+  figure에 담아진 이미지와 동일하게 보일 것이다.
 }
-
-img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  /* 어제 배운 내용을 활용 해보기, 재료를 알려주는 것이다. */
-  /* 정사각형 비율이 유지될거라는 전제하에 */
-  border-radius: 50%;
-}
-
-&::after {
-  content: "";
-  position: absolute;
-  /* BFC */
-  width: 25%;
-  aspect-ratio: 1/1;
-  border-radius: var(--radius);
-  right: 0;
-  bottom: 0;
-  border: 2px solid var(--state-border);
-  background: var(--state);
-}
-
-&.is-active::after {
-  background: var(--state-active);
-}
+*/
 
 /* button을 쓰면 공백이 생긴다. agent 스타일 상 border, padding이 있다. 커서가 기본적으로 포인터 이다. 
 button 관련 에이전트 살펴 보자.
@@ -128,3 +86,78 @@ button 관련 에이전트 살펴 보자.
   border-width: 0; option: 혹시 모르니 
 }
 */
+
+@import "/src/common/modern-reset.css";
+@import "/src/common/a11y.css";
+
+/* 아바타 컴포넌트 */
+/* 인터렉션이 없는 이미지 컴포넌트 */
+.img-avatar {
+  --size: 4rem;
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-border: #fff;
+  --state-active: #4cfe88;
+
+  width: var(--size);
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+  }
+
+  .state {
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--state-border);
+    background: var(--state);
+
+    &.is-active {
+      background: var(--state-active);
+    }
+  }
+}
+
+/* 인터렉션이 있는 버튼 컴포넌트 */
+.button-avatar {
+  --size: 4rem;
+  --radius: 50%;
+  --state: #dbdbdb;
+  --state-border: #fff;
+  --state-active: #4cfe88;
+
+  position: relative;
+  width: var(--size);
+  background: transparent;
+  border: 0;
+  padding: 0;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    /* BFC */
+    width: 25%;
+    aspect-ratio: 1/1;
+    border-radius: var(--radius);
+    right: 0;
+    bottom: 0;
+    border: 2px solid var(--state-border);
+    background: var(--state);
+  }
+
+  &.is-active::after {
+    background: var(--state-active);
+  }
+}

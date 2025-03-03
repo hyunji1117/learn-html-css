@@ -215,6 +215,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-수업자료-링크.css
+수업자료-링크.md
 
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,osx,visualstudiocode

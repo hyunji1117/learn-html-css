@@ -16,7 +16,7 @@ a {
 /* Components Container 스타일링 */
 .components-container {
   display: flex;
-  flex-flow: column nowrap;
-  row-gap: 1rem;
-  padding: 1rem;
+flex-flow: column nowrap;
+row-gap: 1rem;
+padding: 1rem;
 }

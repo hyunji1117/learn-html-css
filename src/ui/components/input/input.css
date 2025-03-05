@@ -3,7 +3,7 @@
 @import '/src/common/a11y.css';
 @import '/src/common/base.css';
 
-form {
+/* form {
   display: contents;
 
   fieldset {
@@ -12,7 +12,7 @@ form {
     padding: 0;
     display: contents;
   }
-}
+} */
 
 /* 입력 서식 컴포넌트 */
 .input {

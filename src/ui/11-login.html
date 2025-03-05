@@ -38,11 +38,11 @@
       </a>
     </header>
     <!-- 폼 - 로그인 -->
-    <form action="/" method="post">
+    <form action="/" method="post" class="login-form">
       <fieldset>
         <legend class="sr-only">로그인 폼</legend>
         <div class="input">
-          <label class="input__label" for="input-4">이메일</label>
+          <label class="input__label sr-only" for="input-4">이메일</label>
           <input class="input__input" type="email" id="input-4" name="input-4" required
             placeholder="아이디 또는 이메일 주소를 입력하세요." aria-errormessage="error-message-4" />
           <p class="input__error-message" id="error-message-4" aria-live="polite">
@@ -59,7 +59,7 @@
         </div>
         <div class="checkbox-wrapper">
           <div class="checkbox svg">
-            <input class="checkbox__input" type="checkbox" name="checkbox-2" id="checkbox-2" required />
+            <input class="checkbox__input" type="checkbox" name="checkbox-2" id="checkbox-2" />
             <label class="checkbox__label svg-tag" for="checkbox-2">
               <svg width="24" role="none" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">

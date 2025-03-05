@@ -16,13 +16,54 @@
 
 /* 헤더 */
 .login-header {
-  padding: 4.375rem 0 2.8125rem;
+  padding: 70px 0 45px;
 
-  @media (min-width: 768px) {
-    padding: 6.25rem 0 3.125rem;
+  @media (min-width: 48rem) {
+    padding: 100px 0 50px;
   }
 
   .logo {
     margin: 0 auto;
+
+    @media (max-width: 48rem) {
+      width: 11.25rem;
+      inline-size: 11.25rem;
+    }
+
+  }
+}
+
+/* 로그인 폼 */
+.login-form {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: var(--spacing-5);
+
+  fieldset {
+    display: contents;
+  }
+
+  .checkbox-wrapper {
+    order: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: start;
+
+    .text-link {
+      margin-left: auto;
+      margin-inline-start: auto;
+    }
+  }
+
+  .button {
+    margin-top: var(--spacing-3);
+    margin-block-start: var(--spacing-3);
+    height: 3.75rem;
+    block-size: 3.75rem;
+
+    &:focus-visible {
+      box-shadow: 0 0 0 1px var(--red-500);
+    }
   }
 }

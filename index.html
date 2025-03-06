@@ -3,104 +3,117 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>멋사 프론트엔드 부트캠프 13기</title>
+  <link rel="shortcut icon" href="/src/assets/favicon/likelion.ico" type="image/x-icon" />
+  <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+  <link rel="preload" as="font"
+    href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-  <h1>HTML/CSS</h1>
-  <div>
-    <h2>HTML 마크업</h2>
-    <ul>
-      <li><a href="/src/html/01-basic-structure.html">HTML 기본 구조</a></li>
-      <li><a href="/src/html/02-heading-paragraph.html">제목과 단락</a></li>
-      <li><a href="/src/html/03-image-figure.html">이미지와 파규어</a></li>
-      <li><a href="/src/html/04-anchor.html">하이퍼링크</a></li>
-      <li><a href="/src/html/05-unordered-ordered-list.html">순서형, 비순서형 목록</a></li>
-      <li><a href="/src/html/06-definition-list.html">정의형 목록</a></li>
-      <li><a href="/src/html/07-phrasing-element.html">프레이징 요소</a></li>
-      <li><a href="/src/html/08-blockquote-br.html">인용문과 줄바꿈</a></li>
-      <li><a href="/src/html/09-table.html">테이블</a></li>
-      <li><a href="/src/html/10-container-element.html">블록 컨테이너 요소</a></li>
-      <li><a href="/src/html/11-section-main.html">섹션과 메인 요소</a></li>
-      <li><a href="/src/html/12-text-level-element.html">텍스트레벨 요소</a></li>
-      <li><a href="/src/html/13-address.html">address 요소</a></li>
-      <li><a href="/src/html/14-picture-source.html">picture, source 요소</a></li>
-      <li><a href="/src/html/15-video-source.html">video, iframe 요소</a></li>
-      <li><a href="/src/html/16-iframe-object.html">iframe, object 요소</a></li>
-      <li><a href="/src/html/17-map-area.html">image map 요소</a></li>
-      <li><a href="/src/html/18-form-input.html">form (input 요소) *중요</a></li>
-      <li><a href="/src/html/19-form-button.html">form button 요소</a></li>
-      <li><a href="/src/html/20-form-select-textarea.html">form select textarea 요소</a></li>
-      <li><a href="/src/html/21-dialog-popover.html">dialog 요소</a></li>
-      <li><a href="/src/html/22-details-summary.html">details, summary 요소</a></li>
-      <li><a href="/src/html/23-script.html">script 요소</a></li>
-    </ul>
+  <h1>HMTL/CSS <strong>[멋사 프론트엔드 부트캠프 13기]</strong></h1>
+  <div class="container">
+    <!-- Components -->
+    <div class="group">
+      <h2>컴포넌트(Components)</h2>
+      <ul>
+        <li><a href="/src/ui/components/avatar/avatar.html">아바타</a></li>
+        <li><a href="/src/ui/components/logo/logo.html">네이버 로고</a></li>
+        <li><a href="/src/ui/components/input/input.html">입력서식</a></li>
+        <li><a href="/src/ui/components/checkbox/checkbox.html">체크박스</a></li>
+        <li><a href="/src/ui/components/text-link/text-link.html">텍스트 링크</a></li>
+        <li><a href="/src/ui/components/switch/switch.html">스위치</a></li>
+        <li><a href="/src/ui/components/button/button.html">버튼</a></li>
+        <li><a href="/src/ui/components/select/select.html">셀렉트</a></li>
+      </ul>
+    </div>
+    <!-- UI -->
+    <div class="group">
+      <h2>UI 예제</h2>
+      <ul>
+        <li><a href="/src/ui/01-member-service.html">01-멤버 서비스 링크</a></li>
+        <li><a href="/src/ui/02-notification.html">02-알림(Notification)</a></li>
+        <li><a href="/src/ui/03-toast.html">03-토스트(Toast) UI</a></li>
+        <li> <a href="/src/ui/04-member-service-float.html">04-멤버 서비스 링크(float)</a> </li>
+        <li> <a href="/src/ui/components/avatar/avatar.html">아바타 컴포넌트</a> </li>
+        <li><a href="/src/ui/05-avatar-list.html">05-아바타 리스트</a></li>
+        <li><a href="/src/ui/06-responsive-layout.html">06-반응형 레이아웃</a></li>
+        <li><a href="/src/ui/07-flex-layout.html">07-플렉스 레이아웃</a></li>
+        <li><a href="/src/ui/08-table.html">08-테이블 스타일링</a></li>
+        <li> <a href="/src/ui/09-sticky-header.html">09-헤더 스타일링(sticky)</a> </li>
+        <li><a href="/src/ui/10-searchbar.html">10-검색 바 스타일링</a></li>
+        <li><a href="/src/ui/11-login.html">11-반응형 로그인 페이지</a></li>
+        <li><a href="/src/ui/12-grid-layout.html">12-그리드 레이아웃</a></li>
+        <li><a href="/src/ui/13-avatar-grid.html">13-아바타 그리드 레이아웃</a></li>
+        <li><a href="/src/ui/14-grid-linename.html">14-그리드 레이아웃(name)</a></li>
+        <li><a href="/src/ui/15-subgrid.html">15-서브 그리드</a></li>
+        <li><a href="/src/ui/16-masonry.html">16-Masonry 레이아웃</a></li>
+      </ul>
+    </div>
+    <!-- CSS -->
+    <div class="group">
+      <h2>CSS 스타일</h2>
+      <ul>
+        <li><a href="/src/css/01-css-basic.html">01-CSS 기초</a></li>
+        <li><a href="/src/css/02-selector.html">02-CSS 선택자</a></li>
+        <li><a href="/src/css/03-specificity.html">03-상속, 겹침, 우선순위</a></li>
+        <li><a href="/src/css/04-typography.html">04-Font 관련 속성</a></li>
+        <li><a href="/src/css/05-box-model.html">05-CSS 박스모델</a></li>
+        <li><a href="/src/css/06-reset.html">06-CSS Reset</a></li>
+        <li><a href="/src/css/07-nesting.html">07-CSS 중첩</a></li>
+        <li><a href="/src/css/08-position.html">08-Position</a></li>
+        <li><a href="/src/css/09-custom-properties.html">09-CSS 변수</a></li>
+        <li><a href="/src/css/10-background.html">10-CSS 배경</a></li>
+        <li><a href="/src/css/11-float.html">11-Float</a></li>
+        <li><a href="/src/css/12-media-query.html">12-미디어 쿼리</a></li>
+        <li><a href="/src/css/13-logical-properties.html">13-논리 속성</a></li>
+        <li><a href="/src/css/14-flexbox.html">14-플렉스 박스</a></li>
+        <li><a href="/src/css/15-stacking-context.html">15-스택킹 컨텍스트</a></li>
+        <li><a href="/src/css/16-gridbox.html">16-그리드 박스</a></li>
+        <li><a href="/src/css/17-multi-column.html">17-멀티 컬럼</a></li>
+      </ul>
+    </div>
+    <!-- HTML -->
+    <div class="group">
+      <h2>HTML 마크업</h2>
+      <ul>
+        <li> <a href="/src/html/01-basic-structure.html">01-HTML 기본 명령어</a> </li>
+        <li><a href="/src/html/02-heading-paragraph.html">02-제목과 단락</a></li>
+        <li><a href="/src/html/03-image-figure.html">03-이미지와 피규어</a></li>
+        <li><a href="/src/html/04-anchor.html">04-하이퍼링크</a></li>
+        <li> <a href="/src/html/05-unordered-ordered-list.html">05-비순서형 목록</a> </li>
+        <li><a href="/src/html/06-definition-list.html">06-정의형 목록</a></li>
+        <li><a href="/src/html/07-phrasing-element.html">07-프레이징 요소</a></li>
+        <li><a href="/src/html/08-blockquote-br.html">08-인용문과 줄바꿈</a></li>
+        <li><a href="/src/html/09-table.html">09-테이블</a></li>
+        <li><a href="/src/html/10-container-element.html">10-컨테이너 요소</a></li>
+        <li><a href="/src/html/11-section-main.html">11-섹션과 메인 요소</a></li>
+        <li> <a href="/src/html/12-text-level-element.html">12-텍스트 레벨 요소</a> </li>
+        <li><a href="/src/html/13-address.html">13-address 요소</a></li>
+        <li> <a href="/src/html/14-picture-source.html">14-picture, source 요소</a> </li>
+        <li><a href="/src/html/15-video-track.html">15-video, track 요소</a></li>
+        <li> <a href="/src/html/16-iframe-object.html">16-iframe, object 요소</a> </li>
+        <li><a href="/src/html/17-map-area.html">17-이미지 맵 요소</a></li>
+        <li><a href="/src/html/18-form-input.html">18-폼 (input) 요소</a></li>
+        <li><a href="/src/html/19-form-button.html">19-폼 (button) 요소</a></li>
+        <li> <a href="/src/html/20-form-select-textarea.html">20-폼 (select, textarea) 요소</a> </li>
+        <li> <a href="/src/html/21-dialog-popover.html">21-dialog 요소, popover 속성</a> </li>
+        <li> <a href="/src/html/22-details-summary.html">22-details, summary 요소</a> </li>
+        <li><a href="/src/html/23-script.html">23-script 요소</a></li>
+      </ul>
+    </div>
+    <!-- 연습 -->
+    <div class="group">
+      <h2>연습 공간</h2>
+      <ul>
+        <li> <a href="/practice/test.html">연습장</a></li>
+        <li> <a href="/practice/memo.md">14-grid-linename 수업메모</a></li>
+      </ul>
+    </div>
   </div>
-  <hr />
-  <div>
-    <ul>
-      <li><a href="/src/css/01-css-basic.html">1.CSS 기초</a></li>
-      <li><a href="/src/css/02-selector.html">2.CSS 선택자</a></li>
-      <li><a href="/src/css/03-specificity.html">3.상속, 겹침, 우선순위</a></li>
-      <li><a href="/src/css/04-typography.html">4.Font 관련 속성</a></li>
-      <li><a href="/src/css/05-box-model.html">5.Box model</a></li>
-      <li><a href="/src/css/06-reset.html">6.reset</a></li>
-      <li><a href="/src/css/07-nesting.html">7.CSS 중첩</a></li>
-      <li><a href="/src/css/08-position.html">8.Positioning</a></li>
-      <li><a href="/src/css/09-custom-properties.html">9.CSS 변수</a></li>
-      <li><a href="/src/css/10-background.html">10.CSS 배경</a></li>
-      <li><a href="/src/css/11-float.html">11.Float</a></li>
-      <li><a href="/src/css/12-media-query.html">12.미이어 쿼리</a></li>
-      <li><a href="/src/css/13-logical-properties.html">13.논리 속성</a></li>
-      <li><a href="/src/css/13-table.html">13.프론트엔드 스쿨 13기 교육생 명단</a></li>
-      <li><a href="/src/css/14-flexbox.html">14.플렉스 박스</a></li>
-      <li><a href="/src/css/15-stacking-context.html">15.스택킹 컨텍스트</a></li>
-      <li><a href="/src/css/16-gridbox.html">16.그리드 박스</a></li>
-      <li><a href="/src/css/17-multi-column.html">17.멀티 컬럼</a></li>
-    </ul>
-  </div>
-  <hr />
-  <ul>
-    <li><a href="/src/ui/01-member-service.html">1.멤버 서비스 링크</a></li>
-    <li><a href="/src/ui/02-notification.html">2.알림(Notification)</a></li>
-    <li><a href="/src/ui/03-toast.html">3.토스트(Toast) UI</a></li>
-    <li><a href="/src/ui/04-member-service-float.html">4.멤버 서비스 링크 예제</a></li>
-    <li><a href="src/ui/components/avatar/avatar.html">아바타 컴포넌트<a></li>
-    <li><a href="src/ui/05-avatar-list.html">5.아바타 리스트</a></li>
-    <li><a href="src/ui/06-responsive-layout.html">6.반응형 레이아웃</a></li>
-    <li><a href="src/ui/07-flex-layout.html">7.플렉스 레이아웃</a></li>
-    <li><a href="src/ui/09-sticky-header.html">9.헤더 스타일링(sticky)</a></li>
-    <li><a href="src/ui/10-searchbar.html">10.검색 바(searchbar)</a></li>
-    <li><a href="src/ui/11-login.html">11.반응형 로그인 페이지</a></li>
-    <li><a href="src/ui/12-grid-layout.html">12.그리드 레이아웃</a></li>
-    <li><a href="src/ui/13-avatar-grid.html">13.아바타 레이아웃(그리드)</a></li>
-    <li><a href="src/ui/14-grid-linename.html">14.그리드 레이아웃(line name)</a></li>
-    <li><a href="src/ui/15-subgrid.html">15.서브 그리드</a></li>
-
-  </ul>
-  </div>
-  <hr />
-  <h2>컴포넌트(Components)</h2>
-  <ul>
-    <li><a href="/src/ui/components/avatar/avatar.html">아바타</a></li>
-    <li><a href="/src/ui/components/logo/logo.html">네이버 로고</a></li>
-    <li><a href="/src/ui/components/input/input.html">입력서식</a></li>
-    <li><a href="/src/ui/components/checkbox/checkbox.html">체크박스</a></li>
-    <li><a href="/src/ui/components/text-link/text-link.html">텍스트 링크</a></li>
-    <li><a href="/src/ui/components/switch/switch.html">스위치</a></li>
-    <li><a href="/src/ui/components/button/button.html">버튼</a></li>
-  </ul>
-  <hr />
-  <div>
-    <ul>
-      <li><a href="/src/css/test.html">연습장</a></li>
-    </ul>
-  </div>
-
-
 </body>
 
 </html>

@@ -1,21 +1,68 @@
-@import "/src/common/modern-reset.css";
+@import '/src/common/modern-reset.css';
+@import '/src/common/base.css';
 
-:root {
-  --rose-pink: #f05879;
-  --light-coral: #f17791;
-  --soft-orange: #fb9451;
-  --pastel-yellow: #ffe54c;
-  --periwinkle-blue: #93acff;
+body {
+  background-color: #778899;
+  margin: 20px;
 }
 
-body *,
-body *::before,
-body *::after {
-  box-sizing: border-box;
+h1 {
+  color: #fff;
+  margin-block: 2rem;
+
+  &::before {
+    content: "🎁";
+    margin-inline-end: 0.5rem;
+  }
+
+  strong {
+    font-size: 16px;
+
+  }
 }
 
-ul {
-  list-style: none;
-  width: 33.3333%;
-  /* background: ; */
+.container {
+  --columns: 1;
+
+  color: #121212;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(280px, 1fr));
+  gap: 2rem;
+
+  @media (min-width: 48rem) {
+    --columns: 2;
+  }
+
+  @media (min-width: 80rem) {
+    --columns: 4;
+  }
+
+
+  .group {
+    background-color: #d3d3d3;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    h2 {
+      margin-block: 1rem;
+      color: #121212;
+      font-size: 1.8rem;
+
+      &::before {
+        content: "💜";
+        margin-inline-end: 0.5rem;
+      }
+    }
+
+    ul {
+      columns: 2;
+      column-rule: 1px solid currentColor;
+      column-gap: 4rem;
+      list-style-type: none;
+    }
+
+    li {
+      margin-block: 0.5rem;
+    }
+  }
 }

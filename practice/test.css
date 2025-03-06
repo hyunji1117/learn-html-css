@@ -19,7 +19,6 @@ p {
   margin-block-start: 100px;
   break-before: column;
   border: 2px solid green;
-  column: 1;
 
   span {
     display: block;

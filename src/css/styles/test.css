@@ -3,40 +3,27 @@
 @import '/src/common/a11y.css';
 @import '/src/common/base.css';
 
-.container {
-  display: grid;
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+  font-family: SUIT, sans-serif;
 }
 
-.header {
-  background: var(--green-300);
-  height: 10vh;
+body {
+  width: 90%;
+  margin-inline: auto;
 }
 
-.navigation {
-  background: var(--blue-600);
-  height: 15vh;
-}
+p {
+  margin-block-start: 100px;
+  break-before: column;
+  border: 2px solid green;
+  column: 1;
 
-.content {
-  background: var(--red-400);
-  height: 50vh;
-
-  @media (min-width: 768px) {
-    width: 50%;
-    display: grid;
+  span {
+    display: block;
+    background: yellow;
+    column-span: all;
   }
-}
-
-.sidebar {
-  background: var(--green-800);
-  height: 15vh;
-
-  @media (min-width: 768px) {
-    width: 50%;
-  }
-}
-
-.footer {
-  background: var(--gray-500);
-  height: 10vh;
 }
